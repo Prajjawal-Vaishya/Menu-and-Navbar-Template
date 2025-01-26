@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", serif;
+}
+
+body {
+    background-color: rgb(91, 93, 112);
+    height: 2000px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 10%;
+    border-radius: 50px;
+    background-color: rgb(199, 199, 199);
+}
+
+.topbar .title {
+    display: flex;
+    margin: 6px 4%;
+}
+
+.title h1 {
+    display: flex;
+    font-size: 32px;
+}
+
+#red {
+    color: rgb(167, 6, 6);
+}
+
+.topbar .title:hover {
+    cursor: pointer;
+}
+
+.topbar .account {
+    display: flex;
+    margin: 2px 4%;
+    padding: 5px;
+    border-radius: 50px;
+    transition: all .3s linear;
+    cursor: pointer;
+}
+
+.topbar .account:hover {
+    background-color: rgb(175, 174, 174);
+}
+
+.middle {
+    margin: 50px;
+    text-align: center;
+}
+
+.middle .content {
+    display: none;
+}
+
+.middle .content.active {
+    display: block;
+} 
+
+.bottombar {
+    position: fixed;
+    bottom: 0;
+    margin: 30px 10%;
+    border-radius: 50px;
+    width: 80vw;
+    background-color: rgb(199, 199, 199);
+}
+
+.bottombar .icons {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 20px;
+    height: 60px;
+}
+
+.bottombar .icons .nav_but {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(167, 6, 6);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 100px;
+    width: 100px;
+}
+
+.bottombar .icons .nav_but svg {
+    width: 24px;
+}
+
+.bottombar .icons .nav_but p {
+    position: relative;
+}
+
+
+.bottombar .icons .nav_but p::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0px;
+    border-bottom: 2px solid rgb(167, 6, 6);
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -2px;
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.bottombar .icons .nav_but:hover p::after,
+.bottombar .icons .nav_but p#active::after {
+    width: 100%;
+    left: 0%;
+    transform: translateX(0%);
+}
+
+@media screen and (max-width: 536px) {
+    .bottombar .icons .nav_but svg {
+        width: 18px;
+    }
+
+    .bottombar .icons .nav_but p {
+        font-size: 14px;
+    }
+
+}
